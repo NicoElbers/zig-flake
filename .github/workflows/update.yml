@@ -36,6 +36,8 @@ jobs:
 
       - name: Commit changes
         run: |
+          git checkout updated
+
           # Report changes with a notice on the action
           git diff --numstat | while IFS=$'\t' read -r add del file; do
               # TODO: annotate with the modified line numbers
