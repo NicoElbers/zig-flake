@@ -50,10 +50,3 @@ jobs:
           git commit -m "$commit_msg" releases || :
 
       - run: git push
-
-      - name: Merge changes into compat branch
-        if: github.ref == 'refs/heads/main'
-        run: |
-          git switch compat
-          git merge main
-          git push
